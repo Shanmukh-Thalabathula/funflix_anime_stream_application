@@ -1,0 +1,145 @@
+/* Navbar */
+nav {
+    background-color: #141414; /* Dark background similar to Netflix */
+    color: lightgray;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    box-sizing: border-box;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7); /* Add a subtle shadow for a floating effect */
+}
+
+/* Title of the app (Funflex) */
+.title {
+    text-decoration: none;
+    color: #e50914; /* Netflix Red */
+    font-size: 1.8em;
+    font-weight: bold;
+    margin-right: 20px;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.title:hover {
+    text-decoration: underline;
+    color: #ff3333; /* Lighter Red on hover */
+    text-shadow: 0 0 10px rgba(255, 0, 0, 0.8);
+}
+
+/* Options list (Home, Favorite List, Category) */
+.options {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.options li {
+    margin-right: 20px;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+    position: relative;
+}
+
+/* Links in the options */
+.options li a {
+    text-decoration: none;
+    color: lightgray;
+    font-size: 16px;
+    padding: 5px 0;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.options li a:hover {
+    text-decoration: underline;
+    color: #e50914; /* Netflix Red on hover */
+}
+
+.options li:hover {
+    color: white;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8); /* Light glow effect on hover */
+}
+
+/* Search bar */
+.search-bar {
+    flex-grow: 1;
+    margin-right: 20px;
+    padding: 5px;
+    border: 1px solid #333;
+    background-color: #222;
+    color: lightgray;
+    border-radius: 5px;
+    display: flex;
+}
+
+.search-bar input[type="text"] {
+    width: 100%;
+    padding: 5px;
+    background-color: transparent;
+    border: none;
+    color: lightgray;
+    font-size: 14px;
+}
+
+.search-bar input[type="text"]:focus {
+    outline: none;
+    border-color: #e50914; /* Red border when focused */
+}
+
+.search-bar:hover {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+/* Dropdown menu */
+.dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #141414; /* Dark background */
+    border: 1px solid #333;
+    display: none;
+    flex-direction: column;
+    width: 160px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.dropdown a {
+    padding: 10px;
+    color: lightgray;
+    text-decoration: none;
+    display: block;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown a:hover {
+    background-color: #222; /* Darker background for hover effect */
+    color: white;
+}
+
+/* Show dropdown on hover */
+.account:hover .dropdown {
+    display: flex;
+}
+
+/* Account section style */
+.account {
+    position: relative;
+    cursor: pointer;
+}
+
+.account a {
+    color: lightgray;
+    font-size: 16px;
+    text-decoration: none;
+    padding: 5px;
+}
+
+.account a:hover {
+    color: white;
+}

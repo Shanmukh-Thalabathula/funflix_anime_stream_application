@@ -1,0 +1,118 @@
+/* Wrapper for centering the form */
+.auth-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #141414; /* Dark background similar to Netflix */
+}
+
+/* Card container for the form */
+.auth-card {
+    background: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7); /* Subtle shadow for the form card */
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+    backdrop-filter: blur(5px); /* Adds blur effect to the background */
+}
+
+/* Title of the form (Login/Register) */
+.auth-title {
+    color: #e50914; /* Netflix Red color */
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+/* Form style */
+.auth-form {
+    width: 100%;
+}
+
+/* Label for the inputs */
+.auth-label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #fff;
+    font-size: 14px;
+}
+
+/* Input fields for the form */
+.auth-input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #333;
+    background: #222;
+    color: #fff;
+    border-radius: 4px;
+    outline: none;
+    font-size: 16px;
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.auth-input:focus {
+    border-color: #e50914; /* Netflix red */
+    box-shadow: 0px 0px 10px rgba(255, 0, 0, 0.8);
+}
+
+/* Submit button */
+.auth-btn {
+    width: 100%;
+    background-color: #e50914; /* Netflix red */
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s ease-in-out;
+}
+
+.auth-btn:hover {
+    background-color: #b81d23; /* Darker red for hover */
+    box-shadow: 0 4px 15px rgba(255, 0, 0, 0.8);
+}
+
+/* Text below the form */
+.auth-text {
+    margin-top: 15px;
+    color: #bbb;
+    font-size: 14px;
+}
+
+/* Link styles for Login/Register switch */
+.auth-link {
+    color: #e50914; /* Netflix red */
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.auth-link:hover {
+    text-decoration: underline;
+    color: #fff;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 600px) {
+    .auth-card {
+        padding: 20px;
+        width: 80%;
+    }
+
+    .auth-title {
+        font-size: 24px;
+    }
+
+    .auth-input {
+        padding: 10px;
+    }
+
+    .auth-btn {
+        padding: 10px;
+    }
+}

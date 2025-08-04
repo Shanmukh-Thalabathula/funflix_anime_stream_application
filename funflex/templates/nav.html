@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FunFlix Anime</title>
+</head>
+<body>
+    <nav>
+        <a href="{% url 'details' %}" class="title">Funflex</a>
+        <ul class="options">
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'fav-list' %}">Favorite List</a></li>
+            <li><a href="{% url 'category' %}">Category</a></li>
+            <form class="search-bar" method="get" action="">
+                <input type="text" name="search" placeholder="Search...">
+            </form>
+            {% if request.user.is_authenticated %}
+            <li class="account">
+                <a href="#">{{request.user}}</a>
+                <div class="dropdown">
+                    <a href="{% url 'user-logout' %}">logout</a>
+                </div>
+            </li>
+            {% else %}
+            <li class="account">
+                <a href="#">Account</a>
+                <div class="dropdown">
+                    <a href="{% url 'user-login' %}">Login</a>
+                    <a href="{% url 'user-logout' %]">Register</a>
+                </div>
+            </li>
+            {% endif %}
+        </ul>
+    </nav>
+</body>
+</html>

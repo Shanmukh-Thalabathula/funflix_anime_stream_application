@@ -1,0 +1,74 @@
+/* Netflix-style Favorite List */
+.fav-container {
+    width: 90%;
+    margin: 30px auto;
+    padding: 20px;
+    background: #141414; /* Deep Netflix black */
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.4);
+    text-align: center;
+}
+
+.fav-title {
+    font-size: 26px;
+    font-weight: bold;
+    color: #e50914; /* Netflix red */
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: 0.3s ease-in-out;
+}
+
+.fav-title:hover {
+    text-shadow: 0 0 20px #e50914;
+    transform: scale(1.1);
+}
+
+.fav-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    padding: 0;
+    list-style: none;
+}
+
+.fav-item {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 10px;
+    transition: 0.3s ease-in-out;
+    font-size: 18px;
+    color: white;
+    font-weight: bold;
+    width: 220px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.fav-item:hover {
+    background: #e50914;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.7);
+    transform: scale(1.1);
+}
+
+.fav-item a {
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Inherit color from parent */
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .fav-list {
+        flex-direction: column;
+        align-items: center;
+    }
+    .fav-item {
+        width: 80%;
+    }
+}

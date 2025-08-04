@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %} Favorite - FunFlex {% endblock %}
+
+{% block content %}
+<div class="fav-container">
+    <h2 class="fav-title">Your Favorite Anime</h2>
+    <ul class="fav-list">
+        {% for list in fav_list %}
+        <a href="{% url 'episodes' list.anime_title.title %}">
+            <li class="fav-item">{{ list.anime_title.title }}</li>
+        </a>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

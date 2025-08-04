@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Display - FunFlex
+{% endblock %}
+
+{% block content %}
+<a href="{{ request.META.HTTP_REFERER }}" style="text-align:center"><h4>Go Back</h4></a>
+<div class="video-container">
+    <div class="video-wrapper">
+        <!-- Video Title -->
+        <h3 class="video-title">{{ episode.episode_name }}</h3>
+        <!-- Video -->
+        <video id="myVideo">
+            <source src="{{ episode.episode_video.url }}" type="video/mp4">
+        </video>
+
+        <!-- Custom Controls -->
+        <div class="video-controls">
+            <input type="range" id="progressBar" class="progress-bar" value="0" step="0.1">
+            <div class="controls-bottom">
+                <button id="playPauseBtn" class="control-btn play-btn"><i class="fas fa-play"></i></button>
+                <div class="right-controls">
+                    <button id="volumeBtn" class="control-btn"><i class="fas fa-volume-up"></i></button>
+                    <input type="range" id="volumeSlider" class="volume-slider" min="0" max="1" step="0.1" value="1">
+                    <button id="fullscreenBtn" class="control-btn"><i class="fas fa-expand"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Add Font Awesome for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+{% endblock %}

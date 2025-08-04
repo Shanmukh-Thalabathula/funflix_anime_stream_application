@@ -1,0 +1,214 @@
+/* Netflix-style anime container */
+.anime-container {
+    width: 90%;
+    margin: 20px auto;
+    padding: 20px;
+    background: transparent;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 15px;
+}
+
+/* Anime card with Netflix-style hover effect */
+.anime-card {
+    background: #141414;
+    padding: 10px;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    text-align: center;
+    width: 180px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Hover effects for anime card */
+.anime-card:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.7);
+}
+
+/* Anime poster */
+.anime-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Dark overlay effect on hover */
+.anime-card:hover img {
+    opacity: 0.5;
+}
+
+/* Anime title */
+.anime-title {
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    margin-top: 5px;
+    position: absolute;
+    bottom: 40px; /* Raised title to avoid overlap with buttons */
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Show title on hover */
+.anime-card:hover .anime-title {
+    opacity: 1;
+}
+
+/* Button container */
+.button-container {
+    position: absolute;
+    bottom: 10px; /* Raised buttons to avoid overlap with title */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Show buttons on hover */
+.anime-card:hover .button-container {
+    opacity: 1;
+}
+
+/* Buttons */
+.read-more, .favorite-btn, .close-btn {
+    padding: 6px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    border: none;
+}
+
+.read-more {
+    background: red;
+    color: white;
+}
+
+.favorite-btn {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 1px solid red;
+}
+
+.close-btn {
+    background: red;
+    color: white;
+}
+
+/* Hover effects for buttons */
+.read-more:hover, .favorite-btn:hover, .close-btn:hover {
+    box-shadow: 0 0 10px red;
+    transform: scale(1.1);
+}
+
+/* Popup and overlay styles */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: none;
+}
+
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #141414;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px red;
+    display: none;
+    text-align: left;
+    color: white;
+    width: 70%;
+    max-height: 80%;
+    overflow-y: auto;
+    opacity: 0;
+    transform: scale(0.8);
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Popup visible */
+.popup.show {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+/* Title in popup */
+.popup .popup-title-container {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center; /* Center the title */
+}
+
+/* Category in popup */
+.popup .popup-category-container {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    text-align: center; /* Center the category */
+}
+
+/* Description in popup */
+.popup .popup-description-container {
+    max-height: 300px;
+    overflow-y: auto;
+    margin-bottom: 20px;
+    font-size: 16px;
+    text-align: left;
+    padding-bottom: 20px; /* Padding for bottom space */
+}
+
+/* Close button at the bottom of the popup */
+.popup .close-btn {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    padding: 15px 20px;
+    background: red;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+/* Close button glowing on hover */
+.popup .close-btn:hover {
+    box-shadow: 0 0 10px red;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .anime-container {
+        justify-content: center;
+    }
+    .anime-card {
+        width: 150px;
+    }
+}

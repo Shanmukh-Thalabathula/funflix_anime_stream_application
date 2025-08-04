@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/nav.css' %}">
+    <link rel="stylesheet" href="{% static 'css/auth.css' %}">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <link rel="stylesheet" href="{% static 'css/anime_episode_list.css' %}">
+    <link rel="stylesheet" href="{% static 'css/video_style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/fav_list.css' %}">
+    <link rel="stylesheet" href="{% static 'css/category.css' %}">
+    <link rel="stylesheet" href="{% static 'css/message.css' %}">
+    <link rel="stylesheet" href="{% static 'css/details.css' %}">
+</head>
+<body>
+{% include 'nav.html' %}
+{% if messages %}
+    <div class="messages-container">
+        {% for message in messages %}
+        <div class="message
+            {% if message.tags == 'success' %} message-success
+            {% elif message.tags == 'error' %} message-error
+            {% elif message.tags == 'warning' %} message-warning
+            {% elif message.tags == 'info' %} message-info
+            {% endif %}">
+            {{ message }}
+        </div>
+        {% endfor %}
+    </div>
+{% endif %}
+
+
+    <div>
+        {% block content %}
+        {% endblock %}
+    </div>
+<script src="{% static 'js/home.js' %}"></script>
+<script src="{% static 'js/video_script.js' %}"></script>
+<script src="{% static 'js/category.js' %}"></script>
+</body>
+</html>

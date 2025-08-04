@@ -1,0 +1,52 @@
+.messages-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    width: 300px;
+    max-width: 90%;
+}
+
+.message {
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 16px;
+    text-align: center;
+    color: white;
+    opacity: 0.9;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.5s ease-in-out, fadeOut 3s ease-in-out 4s forwards;
+}
+
+/* Success (Green - Netflix Like) */
+.message-success {
+    background: #46d369; /* Netflix Green */
+}
+
+/* Error (Red - Netflix Like) */
+.message-error {
+    background: #e50914; /* Netflix Red */
+}
+
+/* Warning (Orange) */
+.message-warning {
+    background: #f39c12;
+}
+
+/* Info (Blue) */
+.message-info {
+    background: #3498db;
+}
+
+/* Fade Animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 0.9; transform: translateY(0); }
+}
+
+@keyframes fadeOut {
+    from { opacity: 0.9; }
+    to { opacity: 0; transform: translateY(-10px); }
+}

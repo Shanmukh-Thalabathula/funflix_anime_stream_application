@@ -1,0 +1,42 @@
+        body {
+            background-color: #141414;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .info-container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+        }
+        .info-title {
+            font-size: 3rem;
+            color: red;
+            text-align: center;
+            text-shadow: 0 0 10px red;
+        }
+        .info-heading {
+            color: white;
+            border-bottom: 2px solid red;
+            padding-bottom: 5px;
+        }
+        .info-about, .info-project, .info-features, .info-social {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+        .info-list {
+            list-style-type: square;
+        }
+        .info-social a {
+            color: red;
+            text-decoration: none;
+            font-weight: bold;
+            display: block;
+            margin: 5px 0;
+        }
+        .info-social a:hover {
+            text-decoration: underline;
+        }

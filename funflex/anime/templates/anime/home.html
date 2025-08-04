@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Home - FunFlex
+{% endblock %}
+
+{% block content %}
+    <div class="anime-container">
+        {% for anime in anime_list %}
+        <div class="anime-card">
+            <a href="{% url 'episodes' anime.title %}">
+                <img src="{{ anime.image.url }}" alt="{{ anime.title }}">
+                <h3 class="anime-title">{{ anime.title }}</h3>
+            </a>
+            <div class="button-container">
+                <button class="read-more" onclick="showPopup('{{ anime.title|escapejs }}', '{{ anime.get_categories|escapejs }}', '{{ anime.description|escapejs }}')">Read More</button>
+                <a href="{% url 'favorite' anime.id %}" class="favorite-btn">
+                    {% if anime.id in fav_list %}
+                    ❤️
+                    {% else %}
+                    🤍
+                    {% endif %}
+                </a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <!-- Popup and overlay -->
+    <div class="overlay" id="overlay" onclick="closePopup()"></div>
+    <div id="popup" class="popup">
+        <!-- Title Section -->
+        <div class="popup-title-container">
+            <h3 id="popup-title"></h3>
+        </div>
+
+        <!-- Category Section -->
+        <div class="popup-category-container">
+            <p><strong>Category:</strong> <span id="popup-category"></span></p>
+        </div>
+
+        <!-- Description Section with scroll enabled -->
+        <div class="popup-description-container">
+            <div id="popup-description"></div> <!-- Dynamic content for description -->
+        </div>
+
+        <!-- Close Button -->
+        <button onclick="closePopup()" class="close-btn">Close</button>
+    </div>
+{% endblock %}

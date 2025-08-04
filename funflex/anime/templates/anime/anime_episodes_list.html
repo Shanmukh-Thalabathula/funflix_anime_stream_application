@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %} Episode list {% endblock %}
+
+{% block content %}
+    <div class="episode-container">
+      <a href="{{ request.META.HTTP_REFERER }}"><h2 class="episode-title">Anime Episodes</h2></a>
+
+        <div class="episode-section">
+          <a href="{{ request.META.HTTP_REFERER }}"><h3 class="episode-title">{{ anime.title }}</h3></a>
+            <ul class="episode-list">
+                {% for episode in episodes %}
+                <a href="{% url 'display-video' episode.id %}">
+                    <li class="episode-item">
+                        Episode {{ episode.episode_number }}: {{ episode.episode_name }}
+                    </li>
+                </a>
+                {% endfor %}
+            </ul>
+        </div>
+
+    </div>
+{% endblock %}
